@@ -1,0 +1,53 @@
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .tool-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tool-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.tool-grid--horizontal {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.tool-grid--horizontal .tool-card {
+  min-width: 260px;
+  max-width: 280px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .tool-grid--horizontal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+  }
+
+  .tool-grid--horizontal .tool-card {
+    min-width: unset;
+    max-width: unset;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tool-grid--horizontal {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
